@@ -8,22 +8,23 @@ const port = process.env.PORT || 8000;
 app.use(express.json());
 
 // CORS allowed origins
-let allowedOrigins = "*";
+// let allowedOrigins = "*";
 
-const containsAny = (string, array) => {
-  return array.some((substring) => string.includes(substring));
-};
+// const containsAny = (string, array) => {
+//   return array.some((substring) => string.includes(substring));
+// };
 
 // CORS options
 const corsOptions = {
-  origin: (origin, callback) => {
-    if (!origin || containsAny(origin, allowedOrigins)) {
-      callback(null, true);
-    } else {
-      console.log("The disallowed origin is: " + origin);
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
+  // origin: (origin, callback) => {
+  //   if (!origin || containsAny(origin, allowedOrigins)) {
+  //     callback(null, true);
+  //   } else {
+  //     console.log("The disallowed origin is: " + origin);
+  //     callback(new Error("Not allowed by CORS"));
+  //   }
+  // },
+  origin: "*",
   optionsSuccessStatus: 200,
   allowedHeaders: ["Content-Type", "pantheon-host"],
   methods: ["GET", "POST", "OPTIONS", "HEAD"],
