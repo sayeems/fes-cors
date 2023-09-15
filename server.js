@@ -8,7 +8,7 @@ const port = process.env.PORT || 8000;
 app.use(express.json());
 
 // CORS allowed origins
-let allowedOrigins = ["*"];
+let allowedOrigins = "*";
 
 const containsAny = (string, array) => {
   return array.some((substring) => string.includes(substring));
