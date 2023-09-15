@@ -8,7 +8,7 @@ const port = process.env.PORT || 8000;
 app.use(express.json());
 
 // CORS allowed origins
-let allowedOrigins = ["https://sayeem.com", "closet.sayeem.com"];
+let allowedOrigins = ["*"];
 
 const containsAny = (string, array) => {
   return array.some((substring) => string.includes(substring));
@@ -25,7 +25,7 @@ const corsOptions = {
     }
   },
   optionsSuccessStatus: 200,
-  allowedHeaders: ["Content-Type"],
+  allowedHeaders: ["Content-Type", "pantheon-host"],
   methods: ["GET", "POST", "OPTIONS", "HEAD"],
   credentials: true,
   exposedHeaders: ["Content-Type"],
